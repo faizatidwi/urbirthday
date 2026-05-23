@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untukmu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Cormorant Garamond',serif;
+background:#f7f3ee;
+color:#2b2b2b;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:40px;
+}
+
+.hero h1{
+font-size:5rem;
+font-weight:300;
+letter-spacing:2px;
+}
+
+.hero p{
+margin-top:20px;
+font-size:1.4rem;
+max-width:700px;
+line-height:1.8;
+}
+
+.scroll{
+margin-top:50px;
+font-size:0.9rem;
+letter-spacing:4px;
+opacity:.6;
+}
+
+.photo{
+height:100vh;
+background:url('foto.jpg') center center/cover no-repeat;
+}
+
+.letter{
+max-width:850px;
+margin:auto;
+padding:120px 30px;
+}
+
+.letter h2{
+font-size:3rem;
+font-weight:400;
+margin-bottom:40px;
+}
+
+.letter p{
+font-size:1.5rem;
+line-height:2;
+margin-bottom:25px;
+}
+
+.signature{
+margin-top:70px;
+font-size:2rem;
+font-style:italic;
+}
+
+audio{
+display:none;
+}
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1.5s;
+}
+
+.show{
+opacity:1;
+transform:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<h1>Selamat Ulang Tahun</h1>
+
+<p>
+Untuk seseorang yang selalu memiliki tempat istimewa di hatiku.
+</p>
+
+<div class="scroll">
+SCROLL
+</div>
+
+</section>
+
+<section class="photo"></section>
+
+<section class="letter fade">
+
+<h2>Untukmu</h2>
+
+<p>
+Hari ini bukan hanya tentang bertambahnya usia.
+Hari ini adalah pengingat bahwa dunia pernah menghadirkan seseorang yang membuat banyak hal terasa lebih berarti.
+</p>
+
+<p>
+Terima kasih atas setiap cerita, tawa, perhatian, dan kehadiran yang selama ini mengisi hari-hariku dengan cara yang tidak pernah sederhana.
+</p>
+
+<p>
+Aku berharap tahun yang baru ini membawamu pada lebih banyak kebahagiaan, kesehatan, ketenangan, dan semua hal baik yang pantas kamu dapatkan.
+</p>
+
+<p>
+Dan jika suatu hari nanti kamu melihat kembali perjalanan hidupmu, semoga ada banyak kenangan indah yang membuatmu tersenyum.
+</p>
+
+<div class="signature">
+— Dengan penuh kasih
+</div>
+
+</section>
+
+<audio autoplay loop>
+<source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+
+document.querySelectorAll('.fade').forEach(el=>{
+observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
